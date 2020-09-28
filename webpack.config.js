@@ -13,7 +13,7 @@ const config = (env = {}) => {
       new HtmlWebpackPlugin({
         template: 'public/index.html',
         filename: './index.html',
-        favicon: './src/assets/icon/favicon.ico',
+        // favicon: './src/assets/icon/favicon.ico',
       }),
     ];
 
@@ -34,8 +34,7 @@ const config = (env = {}) => {
       filename: 'main.js',
     },
     module: {
-      rules: [
-        {
+      rules: [{
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
@@ -58,11 +57,18 @@ const config = (env = {}) => {
         },
         {
           test: /\.s[ac]ss$/i,
-          use: [
-            { loader: getLoader() },
-            { loader: 'css-loader' },
-            { loader: 'postcss-loader' },
-            { loader: 'sass-loader' },
+          use: [{
+              loader: getLoader(),
+            },
+            {
+              loader: 'css-loader',
+            },
+            {
+              loader: 'postcss-loader',
+            },
+            {
+              loader: 'sass-loader',
+            },
           ],
         },
         {

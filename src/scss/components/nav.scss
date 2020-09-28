@@ -1,0 +1,30 @@
+.navigation {
+
+  &__group {
+
+    @include flex(row, center, center);
+
+    &__link {
+
+      @extend .paragraph-l;
+      margin: 0.625rem 2.1875rem;
+      color: $color-dark-s;
+
+      a {
+        padding: 0.375rem 0 0.625rem;
+      }
+
+      &:hover {
+        color: $color-light-s;
+      }
+    }
+  }
+
+  .link--active {
+    color: $color-light-s;
+
+    a {
+      border-bottom: 3px solid $color-primary;
+    }
+  }
+}

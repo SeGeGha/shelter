@@ -1,0 +1,17 @@
+.logo {
+
+  &__title {
+    margin-bottom: 0.625rem;
+    font-size: 2rem;
+    color: $color-primary;
+  }
+
+  &__subtitle {
+
+    @extend .paragraph-s;
+    font-size: 0.8125rem;
+    line-height: 115%;
+    letter-spacing: 0.1em;
+    color: $color-light-xl;
+  }
+}
