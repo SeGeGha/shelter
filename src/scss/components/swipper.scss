@@ -1,0 +1,24 @@
+.swipper {
+  width: 100%;
+
+  @include flex(row, center, space-between);
+
+  .card {
+    padding: 1.875rem 2.1875rem;
+    background-color: $color-light-s;
+    text-align: center;
+
+    &__image {
+      margin-bottom: 1.875rem;
+    }
+
+    &__title {
+      color: $pets-card-title;
+      margin-bottom: 1.875rem;
+    }
+
+    &:hover {
+      background-color: $color-light-xl;
+    }
+  }
+}
