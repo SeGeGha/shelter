@@ -24,7 +24,6 @@
     }
 
     &__subheading {
-      @extend .paragraph-l;
       max-width: $text-subheading-max-width;
       color: $color-dark-s;
       margin-bottom: 2.625rem;

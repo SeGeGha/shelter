@@ -1,3 +1,11 @@
 .content {
   @include flex(row, center, space-between);
+
+  &__heading {
+    color: $color-dark-l;
+  }
+
+  .text__subheading {
+    @extend .paragraph-l;
+  }
 }
