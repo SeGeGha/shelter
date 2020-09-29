@@ -4,6 +4,16 @@
 
 @import './abstractions/paragraph.scss';
 
+@import './components/logo.scss';
+
+@import './components/nav.scss';
+
+@import './components/button.scss';
+
+@import './components/swipper.scss';
+
+@import './components/list.scss';
+
 @import './layout/header.scss';
 
 @import './layout/content.scss';
@@ -12,11 +22,11 @@
 
 @import './layout/sections/about.scss';
 
-@import './components/logo.scss';
+@import './layout/sections/pets.scss';
 
-@import './components/nav.scss';
+@import './layout/sections/help.scss';
 
-@import './components/button.scss';
+@import './layout/sections/donation.scss';
 
 * {
   box-sizing: border-box;

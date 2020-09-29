@@ -1,0 +1,21 @@
+.list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 1.6875rem;
+
+  &__item {
+    margin: 0 60px;
+    text-align: center;
+    width: max-content;
+
+    &__icon {
+      margin-bottom: 1.875rem;
+    }
+
+    &__text {
+      color: $color-dark-l;
+    }
+  }
+}

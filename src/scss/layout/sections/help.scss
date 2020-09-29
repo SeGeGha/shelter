@@ -1,0 +1,11 @@
+#help {
+  .content {
+    flex-direction: column;
+    padding: 5rem 0 6.25rem;
+
+    &__heading {
+      text-align: center;
+      margin-bottom: 3.75rem;
+    }
+  }
+}
