@@ -9,12 +9,12 @@
   }
 
   &__column {
-    margin-top: 1.25rem;
     max-width: $column-min-width;
+    margin-top: 1.25rem;
 
     &__heading {
-      color: $color-light-xl;
       margin-bottom: 2.5rem;
+      color: $color-light-xl;
     }
 
     &__subheading {
@@ -31,6 +31,7 @@
       }
 
       a {
+
         @include flex(row, center);
       }
     }
@@ -41,6 +42,7 @@
   }
 
   .text__subheading {
+
     @extend .paragraph-l;
   }
 }

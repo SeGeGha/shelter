@@ -5,16 +5,16 @@
 
   .card {
     padding: 1.875rem 2.1875rem;
-    background-color: $color-light-s;
     text-align: center;
+    background-color: $color-light-s;
 
     &__image {
       margin-bottom: 1.875rem;
     }
 
     &__title {
-      color: $pets-card-title;
       margin-bottom: 1.875rem;
+      color: $pets-card-title;
     }
 
     &:hover {

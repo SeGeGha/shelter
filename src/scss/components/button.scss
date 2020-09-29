@@ -1,14 +1,14 @@
 .button {
   $btn-border-radius: 100px;
   $btn-arrow-size: 52px;
+  padding: 0.9375rem 2.8175rem;
 
   font: inherit;
   font-size: 1.0625rem;
   line-height: 130%;
   letter-spacing: 0.06em;
-  border-radius: $btn-border-radius;
-  padding: 0.9375rem 2.8175rem;
   color: $color-dark-3xl;
+  border-radius: $btn-border-radius;
   transition: background-color 0.3s;
 
   &:hover {

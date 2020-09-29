@@ -1,14 +1,14 @@
 .list {
-  width: 100%;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
   padding: 0 1.6875rem;
 
   &__item {
+    width: max-content;
     margin: 0 60px;
     text-align: center;
-    width: max-content;
 
     &__icon {
       margin-bottom: 1.875rem;
