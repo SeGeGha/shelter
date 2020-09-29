@@ -1,0 +1,54 @@
+#donation {
+  $text-heading-max-width: 300px;
+  $text-subheading-max-width: 380px;
+
+  background-color: $color-light-l;
+
+  .content {
+    padding: 5rem 0 6.25rem;
+    justify-content: center;
+
+    &__image {
+      margin-right: 1.875rem;
+    }
+  }
+
+  .text {
+    max-width: $text-subheading-max-width;
+    color: $color-dark-l;
+
+    &__heading,
+    &__subheading,
+    &__credit-card {
+      margin-bottom: 1.25rem;
+    }
+
+    &__heading {
+      max-width: $text-heading-max-width;
+    }
+
+    &__subheading {
+      font-family: inherit;
+      color: inherit;
+    }
+
+    &__credit-card {
+      display: inline-flex;
+      font-size: 1.25rem;
+      line-height: 115%;
+      letter-spacing: 0.06em;
+      border-radius: 9px;
+      background-color: $color-primary;
+      padding: 0.625rem 0.9375rem;
+
+      img {
+        margin-right: 0.9375rem;
+      }
+    }
+
+    &__description {
+      @extend .paragraph-s;
+      color: $color-dark-m;
+    }
+  }
+}
