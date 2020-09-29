@@ -1,8 +1,43 @@
 .content {
+  $column-min-width: 280px;
+  $column-max-width: 305px;
+
   @include flex(row, center, space-between);
 
   &__heading {
     color: $color-dark-l;
+  }
+
+  &__column {
+    margin-top: 1.25rem;
+    max-width: $column-min-width;
+
+    &__heading {
+      color: $color-light-xl;
+      margin-bottom: 2.5rem;
+    }
+
+    &__subheading {
+      color: $color-primary;
+
+      @include flex(row, center);
+
+      img {
+        margin-right: 1.25rem;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 2.75rem;
+      }
+
+      a {
+        @include flex(row, center);
+      }
+    }
+  }
+
+  .column--extensive {
+    max-width: $column-max-width;
   }
 
   .text__subheading {

@@ -1,0 +1,12 @@
+#footer {
+  background: url('../assets/img/start-screen-background.jpg');
+
+  .outer-wrapper {
+    padding-top: 2.5rem;
+    background: $start-screen-gradient-background;
+  }
+
+  .content {
+    align-items: flex-start;
+  }
+}
