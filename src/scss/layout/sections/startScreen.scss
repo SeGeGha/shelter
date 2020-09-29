@@ -1,0 +1,33 @@
+#start-screen {
+  $text-heading-max-width: 310px;
+  $text-subheading-max-width: 460px;
+
+  background: url('../assets/img/start-screen-background.jpg');
+
+  .outer-wrapper {
+    padding-top: 3.75rem;
+    background: $start-screen-gradient-background;
+  }
+
+  #header {
+    margin-bottom: 3.75rem;
+  }
+
+  .text {
+    margin-bottom: 5.0625rem;
+    margin-right: 2.625rem;
+
+    &__heading {
+      color: $color-light-xl;
+      margin-bottom: 2.625rem;
+      max-width: $text-heading-max-width;
+    }
+
+    &__subheading {
+      @extend .paragraph-l;
+      max-width: $text-subheading-max-width;
+      color: $color-dark-s;
+      margin-bottom: 2.625rem;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+#about {
+  $text-heading-max-width: 370px;
+  $text-subheading-max-width: 430px;
+
+  .content {
+    padding: 5rem 0 6.25rem;
+    justify-content: center;
+
+    &__image {
+      margin-right: 7.5rem;
+    }
+  }
+
+  .text {
+    padding: 0.875rem 0;
+    max-width: $text-subheading-max-width;
+
+    &__heading {
+      max-width: $text-heading-max-width;
+      color: $color-dark-l;
+    }
+
+    &__subheading {
+      @extend .paragraph-l;
+      color: $color-dark-xl;
+    }
+
+    &__heading,
+    &__subheading:not(:last-child) {
+      margin-bottom: 1.5625rem;
+    }
+  }
+}
