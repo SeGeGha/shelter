@@ -75,3 +75,19 @@
     }
   }
 }
+
+@media screen and (max-width: 767px) {
+  .content {
+
+    &__column {
+
+      &:first-child {
+        margin-right: 0;
+      }
+
+      &__heading {
+        text-align: center;
+      }
+    }
+  }
+}
