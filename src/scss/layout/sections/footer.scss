@@ -5,8 +5,12 @@
     padding-top: 2.5rem;
     background: $start-screen-gradient-background;
   }
+}
 
-  .content {
-    align-items: flex-start;
+@media screen and (max-width: 1023px) {
+  #footer {
+    .outer-wrapper {
+      padding-top: 1.875rem;
+    }
   }
 }

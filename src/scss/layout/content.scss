@@ -2,7 +2,7 @@
   $column-min-width: 280px;
   $column-max-width: 305px;
 
-  @include flex(row, center, space-between);
+  @include flex(row, flex-start, space-between);
 
   &__heading {
     color: $color-dark-l;
@@ -28,6 +28,10 @@
 
       &:not(:last-child) {
         margin-bottom: 2.75rem;
+
+        .column--extensive & {
+          margin-bottom: 2.0625rem;
+        }
       }
 
       a {
@@ -41,8 +45,33 @@
     max-width: $column-max-width;
   }
 
+  .column--adaptive {
+    max-width: none;
+    margin: 0;
+    display: inline-flex;
+  }
+
   .text__subheading {
 
     @extend .paragraph-l;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .content {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__column {
+      margin-top: 0;
+
+      &:first-child {
+        margin-right: 3.75rem;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 3.75rem;
+      }
+    }
   }
 }
