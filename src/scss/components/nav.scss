@@ -7,7 +7,7 @@
     &__link {
 
       @extend .paragraph-l;
-      margin: 0.625rem 2.1875rem;
+      margin: 0.625rem 1.09375rem;
       color: $color-dark-s;
 
       a {
@@ -16,6 +16,14 @@
 
       &:hover {
         color: $color-light-s;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
       }
     }
   }
@@ -26,5 +34,11 @@
     a {
       border-bottom: 3px solid $color-primary;
     }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .navigation__group {
+    display: none;
   }
 }
