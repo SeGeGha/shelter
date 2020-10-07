@@ -9,7 +9,8 @@
 
   .content {
     justify-content: center;
-    padding: 5rem 0 6.25rem;
+    padding-top: 5rem;
+    padding-bottom: 6.25rem;
 
     &__image {
       margin-right: 1.875rem;
@@ -54,6 +55,52 @@
       text-align: justify;
 
       @extend .paragraph-s;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  #donation {
+    .content {
+      flex-direction: column-reverse;
+    }
+
+    .text {
+      margin-bottom: 3.75rem;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #donation .content{
+    $text-mobile-max-width: 280px;
+
+    padding: 2.625rem 0.625rem;
+
+    > img {
+      width: 86.67%;
+      margin: 0 auto;
+    }
+
+    .text {
+      margin-bottom: 2.625rem;
+      width: $text-mobile-max-width;
+
+      &__heading {
+        font-size: 1.5625rem;
+        text-align: center;
+      }
+
+      &__subheading,
+      &__credit-card {
+        font-size: 0.9375rem;
+        letter-spacing: 0;
+      } 
+
+      &__credit-card {
+        width: 100%;
+        align-items: center;
+      }
     }
   }
 }
