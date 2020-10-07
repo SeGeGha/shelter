@@ -1,0 +1,56 @@
+@import '../../styles/var.scss';
+
+@import '../../styles/mixin.scss';
+
+.button {
+  $btn-border-radius: 100px;
+  $btn-arrow-size: 52px;
+  padding: 0.9375rem 2.8175rem;
+
+  font: inherit;
+  font-size: 1.0625rem;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: $color-dark-3xl;
+  border-radius: $btn-border-radius;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $color-primary-light;
+  }
+
+  &--primary {
+    background-color: $color-primary;
+  }
+
+  &--secondary,
+  &-arrow {
+    background-color: inherit;
+    border: 2px solid $color-primary;
+
+    &:hover {
+      border-color: $color-primary-light;
+    }
+  }
+
+  &-arrow {
+    padding: 0;
+
+    @include size($btn-arrow-size);
+
+    &--left {
+      transform: rotate(180deg);
+    }
+
+    &--inactive {
+      color: $color-dark-s;
+      border-color: $color-dark-s;
+      cursor: default;
+
+      &:hover {
+        background-color: inherit;
+        border-color: $color-dark-s;
+      }
+    }
+  }
+}

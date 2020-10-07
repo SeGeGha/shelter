@@ -1,0 +1,42 @@
+@import '../../styles/var.scss';
+
+#start-screen {
+  $text-heading-max-width: 310px;
+  $text-subheading-max-width: 460px;
+
+  background: url('../../assets/img/start-screen-background.jpg');
+
+  .outer-wrapper {
+    padding-top: 3.75rem;
+    background: url('../../assets/img/noise_transparent.png'), $start-screen-gradient-background;
+  }
+
+  #header {
+    margin-bottom: 3.75rem;
+  }
+
+  .text {
+    margin-right: 2.625rem;
+    margin-bottom: 5.0625rem;
+
+    &__heading {
+      max-width: $text-heading-max-width;
+      margin-bottom: 2.625rem;
+      color: $color-light-xl;
+    }
+
+    &__subheading {
+      max-width: $text-subheading-max-width;
+      margin-bottom: 2.625rem;
+      color: $color-dark-s;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  #start-screen {
+    .outer-wrapper {
+      padding-top: 1.875rem;
+    }
+  }
+}

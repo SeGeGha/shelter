@@ -1,0 +1,7 @@
+@import '../../../styles/mixin.scss';
+
+.swipper {
+  width: 100%;
+
+  @include flex(row, center, space-between);
+}

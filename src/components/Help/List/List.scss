@@ -1,0 +1,23 @@
+@import '../../../styles/var.scss';
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding: 0 1.6875rem;
+
+  &__item {
+    width: max-content;
+    margin: 0 60px;
+    text-align: center;
+
+    &__icon {
+      margin-bottom: 1.875rem;
+    }
+
+    &__text {
+      color: $color-dark-l;
+    }
+  }
+}

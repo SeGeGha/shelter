@@ -1,0 +1,20 @@
+@import '../../../../styles/var.scss';
+
+.card {
+  padding: 1.875rem 2.1875rem;
+  text-align: center;
+  background-color: $color-light-s;
+
+  &__image {
+    margin-bottom: 1.875rem;
+  }
+
+  &__title {
+    margin-bottom: 1.875rem;
+    color: $pets-card-title;
+  }
+
+  &:hover {
+    background-color: $color-light-xl;
+  }
+}

@@ -1,7 +1,6 @@
-const webpack = require('webpack');
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = (env = {}) => {
   const isProd = env === 'production';
@@ -13,7 +12,6 @@ const config = (env = {}) => {
       new HtmlWebpackPlugin({
         template: 'public/index.html',
         filename: './index.html',
-        // favicon: './src/assets/icon/favicon.ico',
       }),
     ];
 
@@ -28,21 +26,27 @@ const config = (env = {}) => {
 
   return {
     mode: isProd ? 'production' : 'development',
-    entry: ['./src/js/index.js', './src/scss/style.scss'],
+    entry: './src/index.tsx',
     output: {
-      path: path.join(__dirname, '/dist'),
+      path: path.resolve(__dirname, 'dist'),
       filename: 'main.js',
     },
     module: {
-      rules: [{
-          test: /\.js$/,
+      rules: [
+        {
+          test: /\.tsx?$/,
           exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env'],
+          use: [
+            {
+              loader: 'babel-loader',
+              options: {
+                presets: ['@babel/preset-env'],
+              },
             },
-          },
+            {
+              loader: 'awesome-typescript-loader',
+            },
+          ],
         },
         {
           test: /\.(png|jpg|gif|jpeg|ico|svg)$/,
@@ -56,29 +60,36 @@ const config = (env = {}) => {
           }],
         },
         {
-          test: /\.s[ac]ss$/i,
+          test: /\.(wav|mp3)$/,
           use: [{
-              loader: getLoader(),
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/audio',
+              esModule: false,
             },
-            {
-              loader: 'css-loader',
-            },
-            {
-              loader: 'postcss-loader',
-            },
-            {
-              loader: 'sass-loader',
-            },
+          }],
+        },
+        {
+          test: /\.s[ac]ss$/i,
+          use: [
+            { loader: getLoader() },
+            { loader: 'css-loader' },
+            { loader: 'postcss-loader' },
+            { loader: 'sass-loader' },
           ],
         },
         {
-          test: /\.html$/,
-          loader: 'html-loader',
+          test: /\.css$/i,
+          use: [
+            { loader: getLoader() },
+            { loader: 'css-loader' },
+          ],
         },
       ],
     },
     resolve: {
-      extensions: ['.js'],
+      extensions: ['.ts', '.tsx', '.js'],
     },
     devServer: {
       open: true,
