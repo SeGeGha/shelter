@@ -4,4 +4,30 @@
   width: 100%;
 
   @include flex(row, center, space-between);
+
+  .card:nth-child(n + 5) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .swipper {
+    .card:nth-child(n + 4) {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .swipper {
+    margin-bottom: 2.625rem;
+    
+    .button {
+      display: none;
+    }
+    
+    .card:nth-child(n + 3) {
+      display: none;
+    }
+  }
 }

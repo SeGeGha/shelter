@@ -15,6 +15,21 @@
   }
 
   .swipper {
-    margin-bottom: 3.125rem;
+    margin-bottom: 3.75rem;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+
+}
+
+@media screen and (max-width: 767px) {
+  #pets .content{
+    padding: 2.625rem 0.625rem;
+
+    &__heading {
+      font-size: 1.5625rem;
+      margin-bottom: 2.625rem;
+    }
   }
 }
