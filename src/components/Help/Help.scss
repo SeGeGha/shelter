@@ -10,3 +10,14 @@
     }
   }
 }
+
+@media screen and (max-width: 767px) {
+
+  #help .content {
+    padding: 2.625rem 0.625rem;
+
+    &__heading {
+      font-size: 1.5625rem;
+    }
+  }
+}

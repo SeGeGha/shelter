@@ -1,15 +1,16 @@
 @import '../../../styles/var.scss';
 
+@import '../../../styles/mixin.scss';
+
 .list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   width: 100%;
   padding: 0 1.6875rem;
 
+  @include flex(row, flex-end, center, wrap);
+
   &__item {
     width: max-content;
-    margin: 0 60px;
+    margin: 0 4.895%;
     text-align: center;
 
     &__icon {
@@ -18,6 +19,52 @@
 
     &__text {
       color: $color-dark-l;
+    }
+
+    &:nth-child(n + 6) {
+      margin-top: 3.4375rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .list {
+    $item-width: 170px;
+    
+    &__item {
+      width: $item-width;
+
+      &:nth-child(3n + 1) {
+        margin-left: 0;
+      }
+
+      &:nth-child(3n + 3) {
+        margin-right: 0;
+      }
+
+      &:nth-child(n + 4) {
+        margin-top: 3.4375rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .list {
+    $item-width: 130px;
+    padding: 0;
+    
+    &__item {
+      width: $item-width;
+      margin: 0;
+
+      &__text {
+        font-size: 0.9375rem;
+      }
+
+      &:nth-child(n + 3) {
+        margin-top: 1.875rem;
+      }
     }
   }
 }
