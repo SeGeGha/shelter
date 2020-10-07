@@ -1,0 +1,22 @@
+@import '../../styles/var.scss';
+
+#footer {
+  background: url('../../assets/img/start-screen-background.jpg');
+
+  .outer-wrapper {
+    padding-top: 2.5rem;
+    background: url('../../assets/img/noise_transparent.png'), $footer-gradient-background;
+  }
+
+  .content {
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  #footer {
+    .outer-wrapper {
+      padding-top: 1.875rem;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import '../../styles/var.scss';
+
+#pets {
+  background-color: $color-light-l;
+
+  .content {
+    flex-direction: column;
+    padding: 5rem 0 6.25rem;
+
+    &__heading {
+      margin-bottom: 3.75rem;
+      text-align: center;
+    }
+  }
+
+  .swipper {
+    margin-bottom: 3.125rem;
+  }
+}

@@ -1,0 +1,35 @@
+@import '../../styles/var.scss';
+
+#about {
+  $text-heading-max-width: 370px;
+  $text-subheading-max-width: 430px;
+
+  .content {
+    justify-content: center;
+    padding: 5rem 0 6.25rem;
+
+    &__image {
+      margin-right: 7.5rem;
+    }
+  }
+
+  .text {
+    max-width: $text-subheading-max-width;
+    padding: 0.875rem 0;
+
+    &__heading {
+      max-width: $text-heading-max-width;
+      color: $color-dark-l;
+    }
+
+    &__subheading {
+      color: $color-dark-xl;
+      text-align: justify;
+    }
+
+    &__heading,
+    &__subheading:not(:last-child) {
+      margin-bottom: 1.5625rem;
+    }
+  }
+}

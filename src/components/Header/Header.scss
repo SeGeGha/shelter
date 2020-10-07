@@ -1,0 +1,6 @@
+@import '../../styles/mixin.scss';
+
+#header {
+
+  @include flex(row, center, space-between);
+}
