@@ -16,8 +16,21 @@ const Nav: React.FC = () => {
     );
   });
 
+  function toggleMenu({ currentTarget: menuBtn }: React.SyntheticEvent) {
+    menuBtn.classList.toggle('btn--active');
+  }
+
   return (
     <nav className="navigation">
+      <div
+        className="navigation__btn"
+        onClick={toggleMenu}
+        onKeyDown={toggleMenu}
+        role="button"
+        tabIndex={0}
+      >
+        <div className="navigation__btn__line" />
+      </div>
       <ul className="navigation__group">
         {links}
       </ul>

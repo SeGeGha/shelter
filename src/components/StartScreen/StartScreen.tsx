@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { InnerWrapper, OuterWrapper } from '../Wrapper/Wrapper';
-import Header from '../Header/Header';
 import Text from '../Text/Text';
 import Button from '../Button/Button';
 
@@ -34,7 +33,6 @@ const StartScreen: React.FC = () => {
     <section id="start-screen">
       <OuterWrapper>
         <InnerWrapper>
-          <Header />
           {content}
         </InnerWrapper>
       </OuterWrapper>

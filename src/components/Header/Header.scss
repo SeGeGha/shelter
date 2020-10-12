@@ -1,6 +1,19 @@
 @import '../../styles/mixin.scss';
 
 #header {
+  position: absolute;
+  width: 100%;
+  top: 3.75rem;
+  left: 0;
+}
 
-  @include flex(row, center, space-between);
+@media screen and (max-width: 1023px) {
+  #header {
+    top: 1.875rem;
+
+    .content {
+      justify-content: space-between;
+      position: relative;
+    }
+  }
 }

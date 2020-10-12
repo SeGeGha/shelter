@@ -5,19 +5,17 @@ import About from '../../components/About/About';
 import Pets from '../../components/Pets/Pets';
 import Help from '../../components/Help/Help';
 import Donation from '../../components/Donation/Donation';
-import Footer from '../../components/Footer/Footer';
 
 import './Main.scss';
 
 const Main: React.FC = () => (
-  <div id="main-page">
+  <main id="main-page">
     <StartScreen />
     <About />
     <Pets />
     <Help />
     <Donation />
-    <Footer />
-  </div>
+  </main>
 );
 
 export default Main;
