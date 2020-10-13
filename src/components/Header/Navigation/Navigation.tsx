@@ -17,7 +17,7 @@ const Nav: React.FC = () => {
   });
 
   function toggleMenu({ currentTarget: menuBtn }: React.SyntheticEvent) {
-    menuBtn.classList.toggle('btn--active');
+    menuBtn.closest('#root').classList.toggle('menu-btn--active');
   }
 
   return (

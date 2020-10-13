@@ -24,8 +24,8 @@
     }
 
     &__subheading {
-      color: $color-dark-xl;
       text-align: justify;
+      color: $color-dark-xl;
     }
 
     &__heading,
@@ -36,6 +36,7 @@
 }
 
 @media screen and (max-width: 1023px) {
+
   #about .content {
     flex-direction: column-reverse;
 
@@ -51,6 +52,7 @@
 }
 
 @media screen and (max-width: 767px) {
+
   #about .content {
     $text-mobile-max-width: 280px;
 
@@ -61,8 +63,8 @@
     }
 
     .text {
-      margin-bottom: 2.625rem;
       width: $text-mobile-max-width;
+      margin-bottom: 2.625rem;
 
       &__heading {
         font-size: 1.5625rem;

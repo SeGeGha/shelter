@@ -24,12 +24,13 @@
 }
 
 @media screen and (max-width: 767px) {
-  #pets .content{
+
+  #pets .content {
     padding: 2.625rem 0.625rem;
 
     &__heading {
-      font-size: 1.5625rem;
       margin-bottom: 2.625rem;
+      font-size: 1.5625rem;
     }
   }
 }

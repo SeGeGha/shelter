@@ -11,7 +11,9 @@
 }
 
 @media screen and (max-width: 1023px) {
+
   .swipper {
+
     .card:nth-child(n + 4) {
       display: none;
     }
@@ -19,6 +21,7 @@
 }
 
 @media screen and (max-width: 767px) {
+
   .swipper {
     margin-bottom: 2.625rem;
     

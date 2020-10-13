@@ -83,8 +83,9 @@
         transition: $transition 0.1s; 
       }
 
-      .btn--active & {
+      .menu-btn--active & {
         transition: $transition 0.1s;
+        cursor: pointer;
         
         @include size(100%);
   
@@ -110,22 +111,34 @@
 }
 
 @media screen and (max-width: 767px) {
+
   .navigation {
+    $transition-dur: 0.8s;
+    $menu-border: 1px solid;
+
     &__btn {
       display: block;
     }
 
     &__group {
-      display: none;
       position: absolute;
       top: 100%;
-      left: 100vh;
-      transition: all 0.3s;
+      left: 100vw;
+      flex-direction: column;
+      width: 100%;
+      border-top: $menu-border;
+      border-bottom: $menu-border;
+      transition: left $transition-dur, visibility 0s $transition-dur;
+      visibility: hidden;
 
-      .btn--active + & {
-        display: block;
-        position: absolute;
+      .menu-btn--active & {
         left: 0;
+        transition: left $transition-dur, visibility 0s;
+        visibility: visible;
+      }
+
+      &__link {
+        margin: 0.625rem 0;
       }
     }
   }

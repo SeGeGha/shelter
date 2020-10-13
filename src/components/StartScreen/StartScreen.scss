@@ -12,7 +12,12 @@
   }
 
   .inner-wrapper {
-    padding-top: 120px;
+    padding-top: 7.5rem;
+    transition: padding-top 0.5s;
+
+    .menu-btn--active & {
+      padding-top: 14.5rem;
+    }
   }
 
   .text {
@@ -28,13 +33,14 @@
     &__subheading {
       max-width: $text-subheading-max-width;
       margin-bottom: 2.625rem;
-      color: $color-dark-s;
       text-align: justify;
+      color: $color-dark-s;
     }
   }
 }
 
 @media screen and (max-width: 1023px) {
+
   #start-screen {
     $content-image-min-width: 260px;
 
@@ -46,16 +52,16 @@
       flex-direction: column;
 
       &__image {
+        align-self: flex-end;
         width: 80.4%;
         min-width: $content-image-min-width;
-        align-self: flex-end;
       }
     }
 
     .text {
-      margin-right: 0;
       display: flex;
       flex-direction: column;
+      margin-right: 0;
 
       .button {
         align-self: center;
@@ -65,10 +71,12 @@
 }
 
 @media screen and (max-width: 767px) {
+
   #start-screen .content {
+
     .text__heading {
-      text-align: center;
       font-size: 1.5625rem;
+      text-align: center;
     }
   }
 }
