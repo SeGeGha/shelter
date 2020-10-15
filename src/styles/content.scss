@@ -1,5 +1,7 @@
 @import './var.scss';
+
 @import './mixin.scss';
+
 @import './paragraph.scss';
 
 .content {
@@ -50,9 +52,9 @@
   }
 
   .column--adaptive {
+    display: inline-flex;
     max-width: none;
     margin: 0;
-    display: inline-flex;
   }
 
   .text__subheading {
@@ -62,6 +64,7 @@
 }
 
 @media screen and (max-width: 1023px) {
+
   .content {
     flex-wrap: wrap;
     justify-content: center;
@@ -81,6 +84,7 @@
 }
 
 @media screen and (max-width: 767px) {
+
   .content {
 
     &__column {

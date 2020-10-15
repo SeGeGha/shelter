@@ -1,36 +1,100 @@
+@import '../../Button/Button.scss';
+
 @import '../../../styles/mixin.scss';
 
-.swipper {
-  width: 100%;
+@import '../../../styles/var.scss';
 
-  @include flex(row, center, space-between);
+$swiper-laptop-max-width: 990px;
+$swiper-laptop-min-width: 890px;
+$swiper-tablet-max-width: 630px;
+$swiper-tablet-min-width: 580px;
+$swiper-mobile-max-width: 270px;
 
-  .card:nth-child(n + 5) {
-    display: none;
+.swiper {
+
+  &-container {
+    width: 100%;
+    max-width: $swiper-laptop-max-width;
+    min-width: $swiper-laptop-min-width;
+    margin-bottom: 3.75rem;
+  }
+
+  &-wrapper {
+    cursor: grab;
+  }
+
+  &-slide {
+    width: 270px!important;
+    padding-bottom: 1.875rem;
+    text-align: center;
+    overflow: hidden;
+    background-color: $color-light-s;
+    border-radius: 9px;
+
+    img,
+    h4 {
+      margin-bottom: 1.875rem;
+    }
+  
+    h4 {
+      color: $pets-card-title;
+    }
+  
+    &:hover {
+      background-color: $color-light-xl;
+    }
+  }
+
+  &-button {
+
+    &-prev,
+    &-next {
+
+      @extend .button-arrow;
+      position: absolute;
+      top: calc(50% - 1.625rem);
+      right: 0;
+      z-index: 10;
+      color: $color-dark-3xl;
+  
+      border-radius: 100px;
+      cursor: pointer;
+  
+      &::after {
+        position: absolute;
+        top: calc(50% - 0.5rem);
+        left: calc(50% - 0.5rem);
+        content: '\279E';
+      }
+    }
+
+    &-prev {
+      left: 0;
+      transform: rotate(180deg);
+    }
+
+    &-disabled {
+      color: $color-dark-s;
+      border-color: $color-dark-s;
+      cursor: default;
+      pointer-events: none;
+    }
   }
 }
 
 @media screen and (max-width: 1023px) {
 
-  .swipper {
-
-    .card:nth-child(n + 4) {
-      display: none;
-    }
+  .swiper-container {
+    max-width: $swiper-tablet-max-width;
+    min-width: $swiper-tablet-min-width;
   }
 }
 
 @media screen and (max-width: 767px) {
 
-  .swipper {
-    margin-bottom: 2.625rem;
-    
-    .button {
-      display: none;
-    }
-    
-    .card:nth-child(n + 3) {
-      display: none;
-    }
+  .swiper-container {
+    width: $swiper-mobile-max-width;
+    max-width: auto;
+    min-width: auto;
   }
 }

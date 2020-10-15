@@ -79,8 +79,8 @@ a {
 .inner-wrapper {
   width: 100%;
   max-width: 1280px;
-  padding: 0 2.5rem;
   margin: 0 auto;
+  padding: 0 2.5rem;
 }
 
 section {
@@ -88,6 +88,7 @@ section {
 }
 
 @media screen and (max-width: 1023px) {
+
   .inner-wrapper {
     max-width: 992px;
     padding: 0 1.875rem;
@@ -95,12 +96,14 @@ section {
 }
 
 @media screen and (max-width: 991px) {
+
   .inner-wrapper {
     max-width: 768px;
   }
 }
 
 @media screen and (max-width: 767px) {
+
   .inner-wrapper {
     max-width: 320px;
     padding: 0 0.625rem;
