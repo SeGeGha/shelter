@@ -123,17 +123,18 @@
     &__group {
       position: absolute;
       top: 100%;
-      left: 100vw;
+      left: 0;
       flex-direction: column;
       width: 100%;
       border-top: $menu-border;
       border-bottom: $menu-border;
-      transition: left $transition-dur, visibility 0s $transition-dur;
+      opacity: 0;
+      transition: visibility 0s;
       visibility: hidden;
 
       .menu-btn--active & {
-        left: 0;
-        transition: left $transition-dur, visibility 0s;
+        opacity: 1;
+        transition: opacity $transition-dur 0.5s, visibility 0s 0.5s;
         visibility: visible;
       }
 
