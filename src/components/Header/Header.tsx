@@ -11,7 +11,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ theme }) => (
-  <header id="header" className={theme ? 'light-theme' : ''}>
+  <header id="header" className={`${theme}-theme`}>
     <InnerWrapper isContentWrapper>
       <Logo />
       <Nav />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { AppProvider } from './AppContext';
@@ -12,15 +12,27 @@ import Routes from '../config/routes';
 import './App.scss';
 
 const App = () => {
-  const isMainPage = window.location.pathname === Routes.MainPage;
-  const headerTheme = isMainPage ? '' : 'light';
+  // TODO: FIX TOP SCROLL WITH ROUTER
+  const [headerTheme, setHeaderTheme] = useState('');
+
+  function routeTracker(theme: string) {
+    setHeaderTheme(theme);
+  }
+
   return (
     <Router>
       <AppProvider>
         <Header theme={headerTheme} />
         <Switch>
-          <Route component={Main} path={Routes.MainPage} exact />
-          <Route component={Pets} path={Routes.PetsPage} />
+          <Route
+            path={Routes.MainPage}
+            render={() => <Main pageDidMount={routeTracker} />}
+            exact
+          />
+          <Route
+            path={Routes.PetsPage}
+            render={() => <Pets pageDidMount={routeTracker} />}
+          />
         </Switch>
         <Footer />
       </AppProvider>

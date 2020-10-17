@@ -11,6 +11,7 @@ import './Pets.scss';
 
 const Pets: React.FC = () => {
   const isMainPage = window.location.pathname === Routes.MainPage;
+
   return (
     <section id="pets">
       <InnerWrapper isContentWrapper>
