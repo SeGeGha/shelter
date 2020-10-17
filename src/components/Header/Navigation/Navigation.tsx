@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+
+import { useAppContext } from '../../../app/AppContext';
 
 import navLinks from '../../../config/navLinks';
 
 import './Navigation.scss';
 
 const Nav: React.FC = () => {
-  const [activeLink] = useState(1);
+  const { navActiveLink } = useAppContext();
   const links = navLinks.map(({ id, name, url }) => {
-    const liClassName = (activeLink === id) ? 'navigation__group__link link--active' : 'navigation__group__link';
+    const liClassName = (navActiveLink === id) ? 'navigation__group__link link--active' : 'navigation__group__link';
 
     return (
       <li className={liClassName} key={id}>
