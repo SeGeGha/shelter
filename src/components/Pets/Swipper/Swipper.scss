@@ -25,24 +25,6 @@ $swiper-mobile-max-width: 270px;
 
   &-slide {
     width: 270px!important;
-    padding-bottom: 1.875rem;
-    text-align: center;
-    overflow: hidden;
-    background-color: $color-light-s;
-    border-radius: 9px;
-
-    img,
-    h4 {
-      margin-bottom: 1.875rem;
-    }
-  
-    h4 {
-      color: $pets-card-title;
-    }
-  
-    &:hover {
-      background-color: $color-light-xl;
-    }
   }
 
   &-button {

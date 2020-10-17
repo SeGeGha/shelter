@@ -4,7 +4,7 @@ import SwiperCore, {
 } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import Button from '../../Button/Button';
+import PetCard from '../../PetsCard/PetsCard';
 
 import petsCards from '../../../config/petsCards';
 import { SLIDE_WIDTH, MIN_SLIDE_SPACE_BETWEEN, MIN_SLIDE_SPACE_BETWEEN_COUNT } from '../../../config/swiper';
@@ -20,15 +20,14 @@ export default () => {
     spaceBetweenSlide: 0,
   });
   const slides = petsCards.map(({
-    id, name, species, imgSrc,
+    id, name, type, img,
   }) => (
     <SwiperSlide key={id} virtualIndex={id}>
-      <img
-        src={imgSrc}
-        alt={`${species} ${name}`}
+      <PetCard
+        name={name}
+        type={type}
+        img={img}
       />
-      <h4>{name}</h4>
-      <Button type="secondary">Learn more </Button>
     </SwiperSlide>
   ));
 
