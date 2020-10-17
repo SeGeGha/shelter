@@ -8,6 +8,10 @@
     margin-bottom: 0.625rem;
     font-size: 2rem;
     color: $color-primary;
+
+    .light-theme & {
+      color: $color-dark-l;
+    }
   }
 
   &__subtitle {
@@ -17,5 +21,9 @@
     line-height: 115%;
     letter-spacing: 0.1em;
     color: $color-light-xl;
+
+    .light-theme & {
+      color: $color-dark-3xl;
+    }
   }
 }

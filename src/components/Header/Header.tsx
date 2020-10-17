@@ -6,12 +6,16 @@ import Nav from './Navigation/Navigation';
 
 import './Header.scss';
 
-const Header: React.FC = () => (
-  <header id="header">
-  <InnerWrapper isContentWrapper>
-    <Logo />
-    <Nav />
-  </InnerWrapper>
+interface HeaderProps {
+  theme?: string,
+}
+
+const Header: React.FC<HeaderProps> = ({ theme }) => (
+  <header id="header" className={theme ? 'light-theme' : ''}>
+    <InnerWrapper isContentWrapper>
+      <Logo />
+      <Nav />
+    </InnerWrapper>
   </header>
 );
 

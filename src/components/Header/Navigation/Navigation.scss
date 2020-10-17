@@ -18,6 +18,14 @@
       margin: 0.625rem 1.09375rem;
       color: $color-dark-s;
 
+      .light-theme & {
+        color: $color-dark-l;
+
+        &:hover {
+          color: $color-dark-s;
+        }
+      }
+
       a {
         padding: 0.375rem 0 0.625rem;
       }
@@ -41,6 +49,10 @@
 
     a {
       border-bottom: 3px solid $color-primary;
+    }
+
+    .light-theme & {
+      color: $color-dark-l;
     }
   }
 
