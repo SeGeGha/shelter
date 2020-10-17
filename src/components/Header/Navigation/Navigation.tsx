@@ -8,7 +8,7 @@ import navLinks from '../../../config/navLinks';
 import './Navigation.scss';
 
 const Nav: React.FC = () => {
-  const { navActiveLink } = useAppContext();
+  const { navActiveLink, toggleMobileMenu } = useAppContext();
   const links = navLinks.map(({ id, name, url }) => {
     const liClassName = (navActiveLink === id) ? 'navigation__group__link link--active' : 'navigation__group__link';
 
@@ -21,16 +21,12 @@ const Nav: React.FC = () => {
     );
   });
 
-  function toggleMenu({ currentTarget: menuBtn }: React.SyntheticEvent) {
-    menuBtn.closest('#root').classList.toggle('menu-btn--active');
-  }
-
   return (
     <nav className="navigation">
       <div
         className="navigation__btn"
-        onClick={toggleMenu}
-        onKeyDown={toggleMenu}
+        onClick={toggleMobileMenu}
+        onKeyDown={() => {}}
         role="button"
         tabIndex={0}
       >

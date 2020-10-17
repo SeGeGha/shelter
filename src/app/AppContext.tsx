@@ -1,11 +1,12 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 
-import Routes from '../config/routes';
+import pageSettings from '../config/navLinks';
 
 interface AppState {
   headerTheme: string,
   navActiveLink: number,
   pageDidMount: (theme: string) => void,
+  toggleMobileMenu: () => void,
 }
 
 const AppContext = React.createContext({} as AppState);
@@ -13,29 +14,51 @@ const AppContext = React.createContext({} as AppState);
 export const useAppContext = (): AppState => useContext(AppContext);
 
 export const AppProvider: React.FC = ({ children }) => {
-  const [headerTheme, setHeaderTheme] = useState('default');
-  const [navActiveLink, setNavActiveLink] = useState(1);
+  const [headerState, setHeaderState] = useState({
+    theme: 'default',
+    menuState: {
+      isOpened: false,
+      activeLink: 1,
+    },
+  });
 
   function routeTracker(pagePath: string) {
-    switch (pagePath) {
-      case Routes.MainPage:
-        setHeaderTheme('default');
-        setNavActiveLink(1);
-        break;
-      case Routes.PetsPage:
-        setHeaderTheme('light');
-        setNavActiveLink(2);
-        break;
-      default:
-        break;
-    }
+    const { id, headerTheme } = (pageSettings.find((page) => page.url === pagePath));
+
+    setHeaderState({
+      ...headerState,
+      theme: headerTheme,
+      menuState: {
+        isOpened: false,
+        activeLink: id,
+      },
+    });
   }
+
+  function toggleMobileMenu() {
+    setHeaderState({
+      ...headerState,
+      menuState: {
+        ...headerState.menuState,
+        isOpened: !headerState.menuState.isOpened,
+      },
+    });
+  }
+
+  useEffect(() => {
+    if (headerState.menuState.isOpened) {
+      document.querySelector('#root').classList.add('menu-btn--active');
+    } else {
+      document.querySelector('#root').classList.remove('menu-btn--active');
+    }
+  }, [headerState.menuState.isOpened]);
 
   return (
     <AppContext.Provider value={{
-      headerTheme,
+      headerTheme: headerState.theme,
       pageDidMount: routeTracker,
-      navActiveLink,
+      navActiveLink: headerState.menuState.activeLink,
+      toggleMobileMenu,
     }}
     >
       { children }
