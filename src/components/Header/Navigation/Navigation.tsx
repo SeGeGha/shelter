@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import navLinks from '../../../config/navLinks';
 
@@ -11,7 +12,9 @@ const Nav: React.FC = () => {
 
     return (
       <li className={liClassName} key={id}>
-        <a href={url}>{name}</a>
+        <Link to={url}>
+          {name}
+        </Link>
       </li>
     );
   });

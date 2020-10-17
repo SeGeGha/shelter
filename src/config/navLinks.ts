@@ -1,13 +1,15 @@
+import Routes from './routes';
+
 const navLinks = [
   {
     id: 1,
     name: 'About the shelter',
-    url: '#',
+    url: Routes.MainPage,
   },
   {
     id: 2,
     name: 'Our pets',
-    url: '#',
+    url: Routes.PetsPage,
   },
   {
     id: 3,
