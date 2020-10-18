@@ -4,9 +4,10 @@ import './Button.scss';
 
 interface ButtonProps {
   type: string,
+  onClick?: () => void,
 }
 
-const Button: React.FC<ButtonProps> = ({ children, type }) => {
+const Button: React.FC<ButtonProps> = ({ children, type, onClick }) => {
   let btnClassList = 'button';
   const [
     primaryType, secondaryType, leftArrowType, rightArrowType,
@@ -26,7 +27,7 @@ const Button: React.FC<ButtonProps> = ({ children, type }) => {
   }
 
   return (
-    <button type="button" className={btnClassList}>
+    <button type="button" className={btnClassList} onClick={onClick}>
       {children}
     </button>
   );

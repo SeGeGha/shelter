@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SwiperCore, {
-  Navigation, Virtual, A11y, Autoplay,
+  Navigation, Virtual, A11y,
 } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -12,7 +12,7 @@ import { SLIDE_WIDTH, MIN_SLIDE_SPACE_BETWEEN, MIN_SLIDE_SPACE_BETWEEN_COUNT } f
 import 'swiper/swiper.scss';
 import './Swipper.scss';
 
-SwiperCore.use([Navigation, Virtual, A11y, Autoplay]);
+SwiperCore.use([Navigation, Virtual, A11y]);
 
 export default () => {
   const [swiperConfig, setSwiperConfig] = useState({
@@ -56,7 +56,6 @@ export default () => {
       slidesPerView={swiperConfig.slidesPerView}
       navigation
       virtual
-      autoplay
     >
       {slides}
     </Swiper>
