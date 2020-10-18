@@ -57,6 +57,9 @@
   }
 
   &__btn {
+    position: relative;
+    top: 0;
+    left: 8.4375rem;
     display: none;
     overflow: hidden;
     cursor: pointer;
@@ -95,7 +98,7 @@
         transition: $transition 0.1s; 
       }
 
-      .menu-btn--active & {
+      .menu-opened & {
         transition: $transition 0.1s;
         cursor: pointer;
         
@@ -125,28 +128,43 @@
 @media screen and (max-width: 767px) {
 
   .navigation {
-    $transition-dur: 0.8s;
-    $menu-border: 1px solid;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 2.8rem 0.625rem 0;
+    overflow-x: hidden;
+    transition: background-color 0.7s;
+
+    @include flex(column, center, flex-start);
 
     &__btn {
       display: block;
     }
 
+    .menu-opened & {
+      background-color: $color-dark-3xl;
+    }
+
+    .menu-opened .light-theme & {
+      background-color: $color-light-xl;
+    }
+
     &__group {
-      position: absolute;
-      top: 100%;
-      left: 0;
+      position: relative;
+      top: 0;
+      left: 100vw;
       flex-direction: column;
-      width: 100%;
-      border-top: $menu-border;
-      border-bottom: $menu-border;
-      opacity: 0;
-      transition: visibility 0s;
+      width: 320px;
+      margin-top: 2.5rem;
+      transition: left 0.7s, visibility 0s 0.7s;
       visibility: hidden;
 
-      .menu-btn--active & {
-        opacity: 1;
-        transition: opacity $transition-dur 0.5s, visibility 0s 0.5s;
+      .menu-opened & {
+        left: 0;
+        transition: left 0.7s, visibility 0s;
         visibility: visible;
       }
 

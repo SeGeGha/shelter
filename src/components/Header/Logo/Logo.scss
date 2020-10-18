@@ -27,3 +27,10 @@
     }
   }
 }
+
+@media screen and (max-width: 767px) {
+
+  .logo {
+    z-index: 1;
+  }
+}

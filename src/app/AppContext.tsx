@@ -47,9 +47,9 @@ export const AppProvider: React.FC = ({ children }) => {
 
   useEffect(() => {
     if (headerState.menuState.isOpened) {
-      document.querySelector('#root').classList.add('menu-btn--active');
+      document.querySelector('#root').classList.add('menu-opened');
     } else {
-      document.querySelector('#root').classList.remove('menu-btn--active');
+      document.querySelector('#root').classList.remove('menu-opened');
     }
   }, [headerState.menuState.isOpened]);
 
