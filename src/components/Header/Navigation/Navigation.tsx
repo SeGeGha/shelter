@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -22,7 +24,14 @@ const Nav: React.FC = () => {
   });
 
   return (
-    <nav className="navigation">
+    <nav
+      className="navigation"
+      onClick={({ target, currentTarget }) => {
+        if (currentTarget === target) {
+          toggleMobileMenu();
+        }
+      }}
+    >
       <div
         className="navigation__btn"
         onClick={toggleMobileMenu}
