@@ -63,6 +63,7 @@
     display: none;
     overflow: hidden;
     cursor: pointer;
+    pointer-events: all;
   
     @include size($btnSize);
   
@@ -128,15 +129,16 @@
 @media screen and (max-width: 767px) {
 
   .navigation {
-
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 2;
     width: 100vw;
     min-height: 100vh;
     padding: 2.8rem 0.625rem 0;
-    overflow-x: hidden;
     transition: background-color 0.7s;
+    overflow-x: hidden;
+    pointer-events: none;
 
     @include flex(column, center, flex-start);
 
@@ -146,6 +148,7 @@
 
     .menu-opened & {
       background-color: $color-dark-3xl;
+      pointer-events: all;
     }
 
     .menu-opened .light-theme & {

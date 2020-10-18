@@ -10,9 +10,7 @@
 
 
   &.light-theme {
-    position: sticky;
-    top: 0;
-    z-index: 999999;
+    position: static;
     padding: 1.875rem 0;
     background-color: $color-light-xl;
   }
@@ -20,7 +18,11 @@
 
 @media screen and (max-width: 1023px) {
 
-  #header .content {
+  #header {
+    min-height: 7.4375rem;
+
+    .content {
       justify-content: space-between;
+  }
   }
 }

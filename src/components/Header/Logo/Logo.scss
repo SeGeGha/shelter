@@ -3,6 +3,7 @@
 @import '../../../styles/var.scss';
 
 .logo {
+  z-index: 3;
 
   &__title {
     margin-bottom: 0.625rem;
@@ -30,7 +31,8 @@
 
 @media screen and (max-width: 767px) {
 
-  .logo {
-    z-index: 1;
+  .menu-opened .logo {
+    position: fixed;
+    top: 1.875rem;
   }
 }

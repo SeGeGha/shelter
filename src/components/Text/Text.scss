@@ -1,0 +1,18 @@
+.text {
+
+  > a {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .text {
+
+    &__heading {
+      width: 95%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}

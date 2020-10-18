@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './Text.scss';
+
 interface TextProps {
   heading: string,
   subheadings?: Array<string>,
