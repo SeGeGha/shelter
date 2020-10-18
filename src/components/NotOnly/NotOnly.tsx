@@ -1,14 +1,16 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import { InnerWrapper, OuterWrapper } from '../Wrapper/Wrapper';
 import Text from '../Text/Text';
 import Button from '../Button/Button';
 
+import Routes from '../../config/routes';
+
 import PuppyDogImg from '../../assets/img/start-screen-puppy.png';
 
-import './StartScreen.scss';
+import './NotOnly.scss';
 
-const StartScreen: React.FC = () => {
+const NotOnly: React.FC = () => {
   const textContent = {
     heading: 'Not only people need a house',
     subheadings: [
@@ -23,7 +25,9 @@ const StartScreen: React.FC = () => {
         heading={textContent.heading}
         subheadings={textContent.subheadings}
       >
-        <Button type="primary">Make a friend</Button>
+        <Link to={Routes.PetsPage}>
+          <Button type="primary">Make a friend</Button>
+        </Link>
       </Text>
       <img src={PuppyDogImg} alt="Dog Puppy" className="content__image" />
     </div>
@@ -40,4 +44,4 @@ const StartScreen: React.FC = () => {
   );
 };
 
-export default StartScreen;
+export default NotOnly;

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { useAppContext } from '../../app/AppContext';
 
-import StartScreen from '../../components/StartScreen/StartScreen';
+import NotOnly from '../../components/NotOnly/NotOnly';
 import About from '../../components/About/About';
 import Pets from '../../components/Pets/Pets';
 import Help from '../../components/Help/Help';
@@ -21,7 +21,7 @@ const Main: React.FC<MainProps> = ({ pagePath }) => {
 
   return (
     <main id="main-page">
-      <StartScreen />
+      <NotOnly />
       <About />
       <Pets />
       <Help />
