@@ -3,12 +3,15 @@
 @import '../../../styles/var.scss';
 
 .logo {
+  display: inline-block;
   z-index: 3;
+  cursor: pointer;
 
   &__title {
     margin-bottom: 0.625rem;
     font-size: 2rem;
     color: $color-primary;
+    cursor: inherit;
 
     .light-theme & {
       color: $color-dark-l;
@@ -22,6 +25,7 @@
     line-height: 115%;
     letter-spacing: 0.1em;
     color: $color-light-xl;
+    cursor: inherit;
 
     .light-theme & {
       color: $color-dark-3xl;
